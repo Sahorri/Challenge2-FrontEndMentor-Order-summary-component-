@@ -1,0 +1,143 @@
+/** GENERAL **/
+
+/* Reset des marges intérieurs et extérieures + Modèle Border-Box */
+*,
+*::before,
+*::after { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+/* Déclaration des variables couleurs */
+:root {
+    --pale-blue: hsl(225, 100%, 94%);
+    --bright-blue: hsl(245, 75%, 52%);
+    --very-pale-blue: hsl(225, 100%, 98%); 
+    --desaturated-blue: hsl(224, 23%, 55%);
+    --dark-blue: hsl(223, 47%, 23%);
+    --ff-regular: 'Red Hat Display', sans-serif; 
+    --fw-medium: 500;
+    --fw-bold: 700;
+    --ff-large: 900;
+}
+
+/* Base de 10px => Pour que 1em=1px */
+html {
+    font-size: 62.5%;
+}
+
+/** FLEXBOX **/
+
+body {
+    font-family: var(--ff-regular);
+    font-weight: var(--fw-medium);
+    font-size: 1.6em; /* 16px */
+    min-height: 100vh; /* hauteur mini = 100% de la fenêtre */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: hsl(225deg, 100%, 94%) url("images/pattern-background-desktop.svg") no-repeat left top/contain;
+}
+
+main { /* Image + Texte */
+    display: flex;
+    flex-direction: column;
+    width: 450px;
+}
+
+img { /* Image */
+    max-width: 100%;
+    border-radius: 15px 15px 0 0;
+}
+
+article { /* Texte */
+    display: flex;
+    flex-direction: column;
+    min-height: 435px;
+    background-color: white;
+    border-radius: 0 0 15px 15px; ;
+}
+
+section { /* Section du prix */
+    display: flex;
+    flex-direction: row;
+    background-color: var(--very-pale-blue);
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+}
+
+h1 {
+    margin-top: 50px;
+    margin-bottom: 25px;
+    margin-right: auto;
+    margin-left: auto;
+    font-weight: var(--ff-large);
+    color: var(--dark-blue);
+}
+
+p {
+    color: var(--desaturated-blue);
+    margin: 0 auto;
+    text-align: center;
+    font-weight: var(--ff-bold);
+    width: 75%;
+}
+
+ul {
+    list-style-type: none; /* Enlève les puces de la liste */
+    display: flex;
+    flex-direction: column;
+}
+
+.annual-plan {
+    color: var(--dark-blue);
+    font-weight: var(--ff-large);
+    margin-left: 20px;
+    margin-bottom: 5px;
+}
+
+.price {
+    color: var(--desaturated-blue);
+    margin-left: 20px;
+}
+
+a {
+    margin-left: 60px;
+    padding: 13px 0;
+    font-weight: var(--ff-large);
+    font-size: 14px;
+    color:darkslateblue;
+}
+
+/* CSS du Bouton */
+button { 
+    padding: 1.2em;
+    width:80%;
+    margin: 10px auto;
+    border-radius: 0.6em;
+    background-color: var(--bright-blue);
+    box-shadow: 0px 5px 30px var(--desaturated-blue);
+    color: white;
+    font-weight: var(--ff-large);
+    border: none;
+    font-size: 14px;
+}
+
+.span {
+    margin: 18px auto;
+    font-weight: var(--ff-large);
+    color: var(--desaturated-blue);
+    font-size: 14px;
+    text-decoration: none;
+}
+
+/* Pour Mobile */
+@media screen and (max-width:680px) {
+    main {
+        width: 400px;
+    }
+}
